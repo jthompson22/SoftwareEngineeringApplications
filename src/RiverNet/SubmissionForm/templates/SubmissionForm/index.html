@@ -1,0 +1,9 @@
+{% if latest_field_list %}
+    <ul>
+    {% for question in latest_field_list %}
+        <li><a href="/SubmissionForm/{{ question.id }}/">{{ question.field_text }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
