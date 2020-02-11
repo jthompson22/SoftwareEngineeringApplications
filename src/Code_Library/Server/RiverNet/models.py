@@ -1,3 +1,4 @@
+Learn more or give us feedback
 from django.db import models
 
 # Create your models here.
