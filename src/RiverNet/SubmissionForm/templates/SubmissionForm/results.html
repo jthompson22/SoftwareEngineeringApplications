@@ -1,9 +1,0 @@
-<h1>{{ question.field_text }}</h1>
-
-<ul>
-{% for choice in question.datainput_set.all %}
-    <li>{{ choice.data_text }} -- {{ choice.data_nums }} vote{{ choice.data_nums|pluralize }}</li>
-{% endfor %}
-</ul>
-
-<a href="{% url 'SubmissionForm:detail' question.id %}">Vote again?</a>
