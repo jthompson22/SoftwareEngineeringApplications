@@ -2,7 +2,7 @@ import sys
 import os
 
 
-def test_config():
+def test_djangoImport():
     check = True
     try:
         import django
