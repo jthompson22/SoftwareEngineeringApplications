@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Side Navigation Bar</title>
+	<link rel="stylesheet" href="{% static 'css/my_style.css' %}">
+	
+</head>
+<body>
+
+<div class="wrapper">
+    <div class="sidebar">
+        <h2>Sidebar</h2>
+        <ul>
+            <a href=  "{% url 'polls:home' %}"><li> Home</li></a>
+            <a href=" {% url 'polls:waterquality' %}"><li> Water Quality </li></a>
+            <a href=" {% url 'polls:waterquantity' %}"><li> Water Quantity </li></a>
+        
+        </ul> 
+        <div class="social_media">
+      </div>
+    </div>
+    <div class="main_content">
+        <div class="header">YERC River Dashboard</div>  
+        <div class="info">
+          {% block content %}
+          {% endblock %}
+      </div>
+    </div>
+</div>
+</body>
+</html>

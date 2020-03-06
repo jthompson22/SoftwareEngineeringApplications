@@ -8,17 +8,31 @@ from .forms import WaterQuantity, WaterQuality
 #admin.site.register(WaterQuality)
 #admin.site.register(WaterQuantity)
 
-def index(request):
+def home(request):
     if request.method == 'POST':
-        form = WaterQuantity(request.POST or None)
+        if 'water_quality' in request.POST:
+            form = WaterQuantity(request.POST or None)
+        elif 'water_quantity' in request.POST:
+            form = WaterQuality(request.POST or None)
+        if form.is_valid():
+            form.save()
+            return render(request, 'home.html', {})
+    else:
+        return render(request, 'home.html', {})
+    return render(request, 'home.html', {})
+
+
+def water_quality(request):
+    if request.method == 'POST':
+        form = WaterQuality(request.POST or None)
         if form.is_valid():
             form.save()
             return render(request, 'home.html', {})
     else:
         return render(request, 'home.html', {})
 
-
-#def post_quantity_data(request):
+def water_quantity(request):
+    return render(request, 'water_quantity.html', {})
     
 
 
