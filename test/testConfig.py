@@ -6,4 +6,4 @@ from apps import *
 
 def test_config():
     a = PollsConfig()
-    assert a.name = 'polls'
+    assert a.name == 'polls'
