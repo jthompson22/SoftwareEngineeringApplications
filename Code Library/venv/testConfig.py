@@ -3,4 +3,5 @@ import os
 import django
 
 def test_config():
-    assert django in sys.modules
+    check = django in sys.modules
+    assert check
