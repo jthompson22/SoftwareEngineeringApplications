@@ -5,5 +5,5 @@ sys.path.append(os.path.abspath("SoftwareEngineeringApplications/Code Library/ve
 from apps import *
 
 def test_config():
-    a = new PollsConfig()
+    a = PollsConfig()
     assert a.name = 'polls'
