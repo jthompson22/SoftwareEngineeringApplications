@@ -1,13 +1,9 @@
 import sys 
 import os
-# sys.path.append(os.path.abspath("../Code Library/venv/polls/apps"))
+sys.path.append(os.path.abspath("./Code Library/venv/polls/apps"))
+
+import apps
 
 def test_config():
-
-    print(os.path.abspath("../Code Library/venv/polls/apps"))
-    
-    # a = PollsConfig()
-    # assert a.name == 'polls'
-
-if __name__ == "__main__":
-    test_config()
+    a = PollsConfig()
+    assert a.name == 'polls'
