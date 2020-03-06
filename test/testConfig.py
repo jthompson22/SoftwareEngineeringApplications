@@ -1,6 +1,8 @@
 import sys 
 import os
-import os.path.abspath("./Code Library/venv/polls/apps")
+sys.path.append(os.path.abspath("./Code Library/venv/polls/apps"))
+
+from apps import PollsConfig
 
 def test_config():
     a = PollsConfig()
