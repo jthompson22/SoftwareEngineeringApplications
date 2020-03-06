@@ -13,6 +13,7 @@ install:
 
 script:
   - python ./"Code Library"/venv/main.py
+  - python ./test/testConfig.py test_config()
   - pytest ./test/testConfig.py
 
 notifications:
