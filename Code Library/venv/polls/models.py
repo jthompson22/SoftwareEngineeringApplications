@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils import timezone
+from jsonfield import JSONField
 
 
 class WaterQuantity(models.Model):
@@ -21,19 +22,22 @@ class WaterQuantity(models.Model):
 
 class WaterQuality(models.Model):
     # it seems like we should make this a "type" for downn the line queries
-    site_id = models.CharField(max_length=50)
-    parameter = models.CharField(max_length=50) 
 
+    #collection process
+    site_id = models.CharField(max_length=50)
+    collector_initials = models.CharField(max_length=3)  
     jar_number = models.IntegerField()
     collection_time = models.DateTimeField() 
 
+
+    '''parameter = models.CharField(max_length=50) 
     pval_one = models.FloatField() #do we want these to have a bound?
     pval_two = models.FloatField()
     pval_three = models.FloatField()
 
-    collector_initials = models.CharField(max_length=3) 
+    
     analyst_initials = models.CharField(max_length=3)
     enterer_intials = models.CharField(max_length=3)
-    notes = models.TextField()
+    notes = models.TextField()''' #previous information
 
     
