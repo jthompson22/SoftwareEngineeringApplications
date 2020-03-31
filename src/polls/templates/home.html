@@ -5,42 +5,17 @@
     <h1> WATER QUALITY DATA </h1>
     <form action ='' method='post'>
     {% csrf_token %}
-    <label for="site_id"> Site Id: </label>
-    <input type="text" id="site_id" name="site_id"><br><br>
-  
-    <label for="parameter"> Parameter:  </label>
-    <input type="text" id="parameter" name="parameter"><br><br>
-  
-    <label for="jar_number"> Jar Number: </label>
-    <input type="number" id="jar_number" name="jar_number"><br><br>
-  
-    <label for="collection_time"> Collection Time: </label>
-    <input type="datetime" id="collection_time" name= "collection_time"><br><br>
-  
-    <label for="pval_one"> Pval One: </label>
-    <input type="number" id="pval_one" name="pval_one"><br><br>
-  
-    <label for="pval_two"> Pval Two: </label>
-    <input type="number" id="pval_two" name="pval_two"><br><br>
+    {% if forms %}
 
-    <label for="pval_three"> Pval Three: </label>
-    <input type="number" id="pval_three" name="pval_three"><br><br>
+        {% for fields in forms %}
+
+        {{ fields.label_tag }} {{fields}} <br>
+   
+       {% endfor %}
+
+    {% endif %}
+    <input type="submit" value="Submit Form">
+    </form>
   
-    <label for="analyst_initials"> Analyst Intitials</label>
-    <input type="text" id="analyst_initials" name="analyst_initials"><br><br>
-
-    <label for="collector_initials"> Collector Intitials</label>
-    <input type="text" id="collector_initials" name="collector_initials"><br><br>
-
-    <label for="enterer_initials"> Enterer Intitials</label>
-    <input type="text" id="enterer_initials" name="enterer_initials"><br><br>
-
-    <label for="notes">Notes: </label>
-    <input type="textArea" id="notes" name="notes"><br><br>
-
-
-    <input type="submit" name="water_quality" value ="Submit Water Quality Data">
-    </form> 
     
-    
-{% endblock %}
+    {% endblock %}

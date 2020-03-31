@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import WaterQuality, WaterQuantity
+from .models import WaterQualityData
 
-admin.site.register(WaterQuality)
-admin.site.register(WaterQuantity)
+admin.site.register(WaterQualityData)
+#admin.site.register(WaterQuantity)

@@ -83,6 +83,7 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 # See https://docs.djangoproject.com/en/2.1/ref/databases/#mysql-db-api-drivers
 # for more information
 import pymysql  # noqa: 402
+pymysql.version_info = (1, 3, 13, "final", 0)
 pymysql.install_as_MySQLdb()
 
 # [START db_setup]
@@ -105,10 +106,14 @@ else:
     #     $ cloud_sql_proxy -instances=[INSTANCE_CONNECTION_NAME]=tcp:3306
     #
     # See https://cloud.google.com/sql/docs/mysql-connect-proxy
-    DATABASES = {
+     DATABASES = {
         'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': 'C:/SoftwareEngineeringApplications/env/db.sqlite3'
+            'ENGINE': 'django.db.backends.mysql',
+            'HOST': '127.0.0.1',
+            'PORT': '3306',
+            'NAME': 'rivernet',
+            'USER': 'jared',
+            'PASSWORD': '115131',
         }
     }
 # [END db_setup]
@@ -151,6 +156,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS =[
-    os.path.join(BASE_DIR, 'static'),
-]
+STATIC_ROOT = 'static'
+#STATICFILES_DIRS =[
+#    os.path.join(BASE_DIR, 'static'),
+#]
