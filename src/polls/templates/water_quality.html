@@ -1,37 +1,10 @@
 {% extends 'index.html' %}
-<!DOCTYPE html>
 
 
-{% block title %} WATER QUALITY DATA {% endblock %}
-
- <!--{% for field in form %}
-       
-        {{field.label_tag}} {{ field }} <br><br>
-    {% endfor %}-->
 
 {% block content %}
-<form action ='/water_quality/' method='post'> 
-    {% csrf_token %}
 
-    <input type ="number" value ="the value">    
-    <input type="date" id="date" name="date"><br><br>
-
-    <label for="pressure_difference"> Pressure Difference</label>
-    
-    <label for="pressure_absolute"> Absolute Pressure </label>
-    <input type="number" id=" pressure_absolute" name="pressure_absolute"><br><br>
-    <label for="temperature "> Temperature </label>
-    <input type="number" id="temperature " name= "temperature"><br><br>
-    <label for="water_level"> Water Level </label>
-    <input type="number" id="water_level" name="water_level"><br><br>
-    <label for="pressure_baro"> Barometer Pressure </label>
-    <input type="number" id="pressure_baro" name="pressure_baro"><br><br>
-    <label for="reference_water_level"> Reference Water Level </label>
-    <input type="number" id="reference_water_level" name="reference_water_level"><br><br>
-    <label for="water_density"> Water Density </label>
-    <input type="number" id="water_density" name="water_density"><br><br>
-
-    <input type="submit" value ="Submit Water Quality">
-</form>
-
+   {% csrf_token %}
+    <h1> WATER QUALITY DATA </h1>
+ 
 {% endblock %}
