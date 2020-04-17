@@ -93,7 +93,7 @@ if os.getenv('GAE_APPLICATION', None):
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.mysql',
-            'HOST': '/cloudsql/rivernet-274115:us-central1:rivernets',
+            'HOST': '/cloudsql/rivernet-274115:us-central1:rivernet',
             'USER': 'jared',
             'PASSWORD': '115131',
             'NAME': 'rivernet',
