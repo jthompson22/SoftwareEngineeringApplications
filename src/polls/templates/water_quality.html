@@ -5,6 +5,34 @@
 {% block content %}
 
    {% csrf_token %}
-    <h1> WATER QUALITY DATA </h1>
+    <h1> WATER QUALITY </h1>
+
+    {% if formset %}
+    <!--{% for dict in formset.errors %}
+          {% for error in dict.values %}
+               <h3>{{error}}</h3>
+          {% endfor %}
+      {% endfor %}-->
+    
+      <form action ='/water_quality/' method='post'>
+      {% csrf_token %}
+        {{ form_errors }}
+      {{ formset.non_form_errors }}
+      {{ formset.management_form }}
+          {% for fields in forms %}
+
+              {{ fields.label_tag }} {{fields}} <br>
+
+          {% endfor %}
+              {% for row in formset %}
+                 
+                 {{row}} <br><br>
+
+              {% endfor %}
+          <input type="submit" value="Save Data">
+      </form>
+
+
+
  
 {% endblock %}
