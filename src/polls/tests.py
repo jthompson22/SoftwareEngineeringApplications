@@ -1,3 +1,12 @@
-from django.test import TestCase  # noqa: 401
+from django.test import TestCase
+from django.test import Client
+from .views import water_quantity
 
-# Create your tests here.
+class pollsTestCase(TestCase):
+    def setUp(self):
+        self.client = Client()
+    
+    def testBasicPost():
+        response = c.get('')
+        print(response)
+        self.assertEqual(response.status_code, 200)
