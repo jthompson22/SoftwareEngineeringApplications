@@ -81,7 +81,7 @@ def water_quality(request):
             data_object.save()
             header = WaterQualityHeader(None)
             success = "You successfully submitted the data"
-            return render(request, 'home.html', {'forms': header, 'success': success})
+            return render(request, 'water_quality.html', {'success': success})
         print("-------")
         print(formset.non_form_errors())
         print("-------")
@@ -96,7 +96,7 @@ def water_quality(request):
                 continue 
         return render(request, 'home.html', {"forms": header, "formset": formset, 'error': error})
 
-    return render(request, 'home.html', {})
+    return render(request, 'water_quality.html', {})
 
     #else:
      #   return render(request, 'home.html', {})
